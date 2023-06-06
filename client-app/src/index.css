@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--backgroundColor);
+  overflow-x: hidden;
+  color: var(--fontPrimaryColor);
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.link-styles {
+  text-decoration: none;
+  color: var(--fontPrimaryColor);
+}
+
+:root {
+  --primaryColor: #73bbc9;
+  --primaryColorLight: #73bbc9b6;
+  --secondaryColor: #f1d4e5;
+  --primaryBackgroundColor: #ececec;
+  --secondaryBackgroundColor: #bdbdbd;
+  --fontPrimaryColor: #2e2d2d;
+  --fontSecondaryColor: #616161;
+}
+[data-theme="dark"] {
+  --primaryColor: #73bbc9;
+  --primaryColorLight: #73bbc9b6;
+  --secondaryColor: #f1d4e5;
+  --primaryBackgroundColor: #111111;
+  --secondaryBackgroundColor: #1f1e1e;
+  --fontPrimaryColor: rgb(243, 243, 243);
+  --fontSecondaryColor: rgb(226, 226, 226);
+}
