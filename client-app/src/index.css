@@ -23,20 +23,21 @@ code {
 }
 
 :root {
-  --primaryColor: #73bbc9;
+  --primaryColor: #4fc0d6;
+  --primaryColorDark: #2ca0b8;
   --primaryColorLight: #73bbc9b6;
   --secondaryColor: #f1d4e5;
   --primaryBackgroundColor: #ececec;
-  --secondaryBackgroundColor: #bdbdbd;
-  --fontPrimaryColor: #2e2d2d;
+  --secondaryBackgroundColor: #d8d8d8;
+  --fontPrimaryColor: #202020;
   --fontSecondaryColor: #616161;
 }
 [data-theme="dark"] {
   --primaryColor: #73bbc9;
   --primaryColorLight: #73bbc9b6;
   --secondaryColor: #f1d4e5;
-  --primaryBackgroundColor: #111111;
-  --secondaryBackgroundColor: #1f1e1e;
+  --primaryBackgroundColor: #2c2c2c;
+  --secondaryBackgroundColor: #313131;
   --fontPrimaryColor: rgb(243, 243, 243);
   --fontSecondaryColor: rgb(226, 226, 226);
 }
