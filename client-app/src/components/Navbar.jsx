@@ -11,7 +11,9 @@ const Navbar = ({ switchTheme, theme }) => {
       <h2 className="logo">
         Phone<span>HIVE</span>
       </h2>
+
       <div className={toggle ? "blur active" : "blur"}></div>
+
       <ul
         onClick={handleToggle}
         className={toggle ? "nav-menu active" : "nav-menu"}
@@ -31,7 +33,7 @@ const Navbar = ({ switchTheme, theme }) => {
           {theme === "dark" ? (
             <BsFillSunFill style={{ color: "white" }} className="themeIcon" />
           ) : (
-            <BsMoonFill style={{ color: "#5e5c5c" }} className="themeIcon" />
+            <BsMoonFill style={{ color: "white" }} className="themeIcon" />
           )}
           {/* </div> */}
         </div>
@@ -43,8 +45,9 @@ const Navbar = ({ switchTheme, theme }) => {
   );
 };
 const Container = styled.div`
-  background-color: var(--primaryBackgroundColor);
-  color: var(--fontPrimaryColor);
+  /* backdrop-filter: blur(10px); */
+  color: white;
+  background: var(--backgroundPrimaryColor);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,11 +57,10 @@ const Container = styled.div`
   height: 80px;
   width: 100%;
   z-index: 100;
-  overflow-x: hidden;
+  overflow-x: visible;
   transition: 0.2s;
-
   .logo {
-    color: var(--fontSecondaryColor);
+    /* color: var(--fontSecondaryColor); */
     font-weight: 500;
     span {
       color: var(--primaryColor);
@@ -78,6 +80,7 @@ const Container = styled.div`
       font-size: 24px;
       cursor: pointer;
       margin-top: 10px;
+      color: white;
     }
     .activeTab {
       color: var(--primaryColor);
@@ -93,10 +96,11 @@ const Container = styled.div`
         border: none;
         background: var(--primaryColor);
         color: white;
+        border-radius: 10px;
         :nth-child(2) {
           background-color: var(--backgroundPrimaryColor);
           border: 1px solid var(--fontSecondaryColor);
-          color: var(--fontPrimaryColor);
+          /* color: var(--fontPrimaryColor); */
         }
         :hover {
           background: var(--primaryColorDark);
@@ -117,7 +121,7 @@ const Container = styled.div`
     transition: 0.3s;
     display: none;
     .icon {
-      color: var(--fontPrimaryColor);
+      color: white;
     }
     :hover {
       transform: scale(1.1);
@@ -126,18 +130,19 @@ const Container = styled.div`
   @media (max-width: 1004px) {
     .blur {
       transition: 0.3s;
-      width: 0%;
+      width: 100%;
       height: 230vh;
-      backdrop-filter: blur(3px);
-      position: fixed;
-      left: -20em;
+      backdrop-filter: blur(10px);
+      position: absolute;
+      left: -100%;
+      z-index: 9;
     }
     .blur.active {
-      left: 0;
+      left: -1em;
       width: 70%;
     }
     .nav-menu {
-      background-color: var(--secondaryBackgroundColor);
+      background-color: #2c2c2c;
       width: 70%;
       height: 100vh;
       display: flex;
@@ -151,7 +156,7 @@ const Container = styled.div`
       transition: 0.3s;
       z-index: 99;
       li {
-        color: var(--fontPrimaryColor);
+        color: white;
       }
       .activeTab {
         color: #ffffff;

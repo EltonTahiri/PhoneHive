@@ -31,8 +31,14 @@ code {
   --secondaryBackgroundColor: #d8d8d8;
   --fontPrimaryColor: #202020;
   --fontSecondaryColor: #616161;
+  --navbarBg: white;
+  --gradientBackground: -webkit-linear-gradient(
+    109.6deg,
+    rgba(193, 82, 236, 0.753) 11.2%,
+    rgb(243, 111, 140) 100.2%
+  );
 }
-[data-theme="dark"] {
+/* [data-theme="dark"] {
   --primaryColor: #73bbc9;
   --primaryColorLight: #73bbc9b6;
   --secondaryColor: #f1d4e5;
@@ -40,4 +46,10 @@ code {
   --secondaryBackgroundColor: #313131;
   --fontPrimaryColor: rgb(243, 243, 243);
   --fontSecondaryColor: rgb(226, 226, 226);
-}
+  --navbarBg: trasparent;
+  --gradientBackground: -webkit-linear-gradient(
+    109.6deg,
+    rgb(34, 3, 46) 11.2%,
+    rgb(110, 18, 38) 100.2%
+  );
+} */

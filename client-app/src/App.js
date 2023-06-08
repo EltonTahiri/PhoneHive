@@ -1,6 +1,7 @@
 import useLocalStorage from "use-local-storage";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Home from "./routes/Home";
 
 function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
@@ -14,7 +15,9 @@ function App() {
       we need to pass theme as a prop, dmth like this theme={theme}
       same thing goes for switch theme */}
       <Navbar theme={theme} switchTheme={switchTheme} />
-      <Routes></Routes>
+      <Routes>
+        <Route path="/" element={<Home />} theme={theme} />
+      </Routes>
     </div>
   );
 }
