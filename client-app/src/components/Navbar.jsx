@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { BsMoonFill, BsFillSunFill } from "react-icons/bs";
 import { FaBars, FaTimes } from "react-icons/fa";
 
-const Navbar = ({ switchTheme, theme }) => {
+const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => setToggle(!toggle);
   return (
@@ -29,14 +28,14 @@ const Navbar = ({ switchTheme, theme }) => {
           <button>Sign Up</button>
           <button>Log In</button>
         </div>
-        <div className="toggleTheme" onClick={switchTheme}>
+        {/* <div className="toggleTheme" onClick={switchTheme}>
           {theme === "dark" ? (
             <BsFillSunFill style={{ color: "white" }} className="themeIcon" />
           ) : (
             <BsMoonFill style={{ color: "white" }} className="themeIcon" />
           )}
           {/* </div> */}
-        </div>
+        {/* </div> */}
       </ul>
       <div className="mobile-menu" onClick={handleToggle}>
         {toggle ? <FaTimes className="icon" /> : <FaBars className="icon" />}
@@ -45,9 +44,8 @@ const Navbar = ({ switchTheme, theme }) => {
   );
 };
 const Container = styled.div`
-  /* backdrop-filter: blur(10px); */
   color: white;
-  background: var(--backgroundPrimaryColor);
+  background: #000000dd;
   display: flex;
   justify-content: space-between;
   align-items: center;

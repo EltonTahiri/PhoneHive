@@ -2,6 +2,7 @@ import useLocalStorage from "use-local-storage";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./routes/Home";
+import Login from "./routes/Login";
 
 function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
@@ -17,6 +18,7 @@ function App() {
       <Navbar theme={theme} switchTheme={switchTheme} />
       <Routes>
         <Route path="/" element={<Home />} theme={theme} />
+        <Route path="/log-in" element={<Login />} />
       </Routes>
     </div>
   );

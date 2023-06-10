@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import Hero from "../components/Hero";
+import Banner from "../components/Banner";
 
 const Home = ({ theme }) => {
-  // imma need to do smth with if stats and pass it like props in the hero section
   return (
     <Container>
       <Hero theme={theme} />
+      <Banner />
     </Container>
   );
 };

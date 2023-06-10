@@ -21,9 +21,10 @@ const Container = styled.div`
   .heroBg {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     filter: brightness(0.3);
     object-fit: cover;
+    border-radius: 0 0 20px 20px;
   }
   .text {
     width: 100%;
