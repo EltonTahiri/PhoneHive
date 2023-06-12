@@ -2,12 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
+import NewestPhones from "../components/NewestPhones";
+import Guarantees from "../components/Guarantees";
 
-const Home = ({ theme }) => {
+const Home = () => {
   return (
     <Container>
-      <Hero theme={theme} />
+      <Hero />
       <Banner />
+      <NewestPhones />
+      {/* guarantees compoment */}
+      <Guarantees />
     </Container>
   );
 };

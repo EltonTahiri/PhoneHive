@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -26,7 +27,9 @@ const Navbar = () => {
         <li>Contact Us</li>
         <div className="buttons">
           <button>Sign Up</button>
-          <button>Log In</button>
+          <Link to={"/log-in"}>
+            <button>Log In</button>
+          </Link>
         </div>
         {/* <div className="toggleTheme" onClick={switchTheme}>
           {theme === "dark" ? (
