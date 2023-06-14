@@ -37,7 +37,7 @@ namespace PhoneHive.Controllers
             }
             return Ok(product);
         }
-
+        
         [HttpPost]
         public ActionResult<Product> CreateProduct(CreateProductDTO productDto)
         {

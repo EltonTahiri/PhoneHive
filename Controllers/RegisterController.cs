@@ -20,7 +20,7 @@ namespace PhoneHive.Controllers
             _context = context;
         }
 
-        [HttpPost("register")]
+        [HttpPost]
         public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
             // Validates the registration data
