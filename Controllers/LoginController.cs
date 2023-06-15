@@ -54,7 +54,8 @@ namespace PhoneHive.Controllers
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Email),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Role, user.Role),
+                new Claim("Name", user.Name)
             };
 
             var signingKey = new SymmetricSecurityKey(secretKey);
