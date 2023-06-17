@@ -1,17 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 import bannerImg from "../assets/homePageImgs/heroImg.png";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <Container>
       <img src={bannerImg} className="heroBg" alt="" />
       <div className="text">
-        <h1>Stay connected. Stay ahead.</h1>
-        <p>
+        <motion.h1
+          animate={{ y: 0, opacity: 1 }}
+          initial={{ y: 300, opacity: 0 }}
+          transition={{
+            duration: 1,
+            bounce: 0.3,
+            delay: 0.8,
+            type: "spring",
+          }}
+        >
+          Stay connected. Stay ahead.
+        </motion.h1>
+        <motion.p
+          animate={{ x: 0, opacity: 1 }}
+          initial={{ x: -400, opacity: 0 }}
+          transition={{ duration: 1, bounce: 0.3, delay: 0.4, type: "spring" }}
+        >
           Unlock endless possibilities and embark on a journey of technological
           marvels with our extraordinary phones.
-        </p>
+        </motion.p>
         <button>EXPLORE MORE</button>
       </div>
     </Container>

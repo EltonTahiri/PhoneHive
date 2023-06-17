@@ -4,10 +4,13 @@ import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import NewestPhones from "../components/NewestPhones";
 import Guarantees from "../components/Guarantees";
+import Navbar from "../components/Navbar";
 
-const Home = () => {
+const Home = ({ theme }) => {
   return (
     <Container>
+      <Navbar />
+
       <Hero />
       <Banner />
       <NewestPhones />

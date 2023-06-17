@@ -1,11 +1,34 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { BiUserCircle } from "react-icons/bi";
+import { Link, useNavigate } from "react-router-dom";
+import jwtDecode from "jwt-decode";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => setToggle(!toggle);
+  const [activeTab, setActiveTab] = useState("home");
+  const [name, setName] = useState("");
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      const decodedToken = jwtDecode(token);
+      setName(decodedToken.Name);
+      console.log(name);
+    } else {
+    }
+  }, []);
+
+  const handleLogOut = () => {
+    localStorage.removeItem("token");
+    navigate("/log-in");
+  };
   return (
     <Container>
       <h2 className="logo">
@@ -20,25 +43,30 @@ const Navbar = () => {
       >
         {/* <div className="blur"></div>
         <div className="content"> */}
-        <li>Home</li>
-        <li>Brands</li>
-        <li>Latest Phones</li>
+        <Link to={"/"} className="link-styles">
+          <li onClick={() => setActiveTab("home")}>Home</li>
+        </Link>
+        <Link to={"/brands"} className="link-styles">
+          <li>Brands</li>
+        </Link>
+        {/* <li>Latest Phones</li> */}
         <li>About Us</li>
         <li>Contact Us</li>
-        <div className="buttons">
-          <button>Sign Up</button>
-          <Link to={"/log-in"}>
-            <button>Log In</button>
-          </Link>
-        </div>
-        {/* <div className="toggleTheme" onClick={switchTheme}>
-          {theme === "dark" ? (
-            <BsFillSunFill style={{ color: "white" }} className="themeIcon" />
-          ) : (
-            <BsMoonFill style={{ color: "white" }} className="themeIcon" />
-          )}
-          {/* </div> */}
-        {/* </div> */}
+        {!isLoggedIn ? (
+          <div className="buttons">
+            <Link to={"/sign-up"}>
+              <button>Sign Up</button>
+            </Link>
+            <Link to={"/log-in"}>
+              <button>Log In</button>
+            </Link>
+          </div>
+        ) : (
+          <div className="userBtn">
+            <BiUserCircle className="icon" />
+            <button onClick={handleLogOut}>Log Out</button>
+          </div>
+        )}
       </ul>
       <div className="mobile-menu" onClick={handleToggle}>
         {toggle ? <FaTimes className="icon" /> : <FaBars className="icon" />}
@@ -87,6 +115,37 @@ const Container = styled.div`
       color: var(--primaryColor);
       font-weight: 700;
     }
+    .userBtn {
+      :hover {
+        button {
+          display: flex;
+        }
+      }
+      .icon {
+        margin-top: 7px;
+        font-size: 30px;
+        cursor: pointer;
+        position: relative;
+      }
+      button {
+        position: absolute;
+        display: none;
+        right: 30px;
+        padding: 7px 10px;
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        border: none;
+        background: var(--primaryColor);
+        color: white;
+        border-radius: 10px;
+        :hover {
+          background: var(--primaryColorDark);
+          transition: 0.3s;
+          cursor: pointer;
+        }
+      }
+    }
+
     .buttons {
       display: flex;
       gap: 7px;

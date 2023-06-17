@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { MdPrecisionManufacturing, MdHighQuality } from "react-icons/md";
 import { GiReturnArrow } from "react-icons/gi";
 import { RiSecurePaymentLine } from "react-icons/ri";
-import { FaLock } from "react-icons/fa";
 
 const Guarantees = () => {
   return (
