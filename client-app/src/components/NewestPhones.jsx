@@ -24,7 +24,7 @@ const NewestPhones = () => {
   return (
     <Container>
       <h3 className="title">
-        <span>N</span>ewest <span>P</span>hones
+        <span>Newest </span>Phones
       </h3>
       <Swiper
         speed={600}
@@ -309,11 +309,11 @@ const Container = styled.div`
     text-align: center;
     width: 100%;
     z-index: 100;
-    font-size: 5em;
+    font-size: 4em;
     font-weight: 300;
+    color: #474747;
     span {
-      color: var(--primaryColor);
-      font-weight: 600;
+      font-weight: 500;
     }
   }
   .swiper-slide {

@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./routes/Home";
 import Signup from "./routes/Signup";
 import Login from "./routes/Login";
+import Brands from "./routes/Brands";
 
 function App() {
   const [theme, setTheme] = useLocalStorage("theme" ? "dark" : "light");
@@ -14,6 +15,7 @@ function App() {
     <div className="App" data-theme={theme}>
       <Routes>
         <Route path="/" element={<Home />} theme={theme} />
+        <Route path="/brands" element={<Brands />} />
         <Route path="/log-in" element={<Login />} />
         <Route path="/sign-up" element={<Signup />} />
       </Routes>

@@ -70,6 +70,7 @@ const Container = styled.div`
     justify-content: center;
     gap: 1em;
     .item {
+      box-shadow: -30px 20px 59px #969696, 30px -20px 59px #ffffff;
       background-color: var(--secondaryBackgroundColor);
       display: flex;
       flex-direction: column;

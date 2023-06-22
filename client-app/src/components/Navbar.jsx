@@ -44,10 +44,20 @@ const Navbar = () => {
         {/* <div className="blur"></div>
         <div className="content"> */}
         <Link to={"/"} className="link-styles">
-          <li onClick={() => setActiveTab("home")}>Home</li>
+          <li
+            className={activeTab === "home" ? "activeTab" : "nonActive"}
+            onClick={() => setActiveTab("home")}
+          >
+            Home
+          </li>
         </Link>
         <Link to={"/brands"} className="link-styles">
-          <li>Brands</li>
+          <li
+            className={activeTab === "brands" ? "activeTab" : "nonActive"}
+            onClick={() => setActiveTab("brands")}
+          >
+            Brands
+          </li>
         </Link>
         {/* <li>Latest Phones</li> */}
         <li>About Us</li>

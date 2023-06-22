@@ -5,13 +5,14 @@ import Banner from "../components/Banner";
 import NewestPhones from "../components/NewestPhones";
 import Guarantees from "../components/Guarantees";
 import Navbar from "../components/Navbar";
+import ProductCategories from "../components/ProductCategories";
 
 const Home = ({ theme }) => {
   return (
     <Container>
       <Navbar />
-
       <Hero />
+      <ProductCategories />
       <Banner />
       <NewestPhones />
       {/* guarantees compoment */}

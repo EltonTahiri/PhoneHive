@@ -1,106 +1,170 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { BiLockAlt } from "react-icons/bi";
+import { BsFillUnlockFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Signup = () => {
-  return <Container>Signup</Container>;
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const togglePassword = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+  return (
+    <Container>
+      <motion.form
+        animate={{ y: 0, opacity: 1 }}
+        initial={{ y: -200, opacity: 0 }}
+        transition={{ duration: 0.7, bounce: 0.3, type: "spring" }}
+      >
+        <Link to={"/"} className="link-styles">
+          <p className="go-back">Go back</p>
+        </Link>
+        {/* add the box shadows */}
+        <h2>SIGN-UP</h2>
+        <div>
+          <input type="text" placeholder="Enter Your Name" />
+        </div>
+        <div>
+          <input type="email" placeholder="Enter Your Email" />
+        </div>
+        <div>
+          <input
+            type={passwordVisible ? "text" : "password"}
+            placeholder="Enter Your Password"
+          />
+          {passwordVisible === true ? (
+            <BsFillUnlockFill className="icon" onClick={togglePassword} />
+          ) : (
+            <BiLockAlt className="icon" onClick={togglePassword} />
+          )}
+        </div>
+        <div>
+          <input
+            type={passwordVisible ? "text" : "password"}
+            placeholder="Confirm Your Password"
+          />
+          {passwordVisible === true ? (
+            <BsFillUnlockFill className="icon" onClick={togglePassword} />
+          ) : (
+            <BiLockAlt className="icon" onClick={togglePassword} />
+          )}
+        </div>
+        <h4>
+          Already have an account?
+          <Link to={"/log-in"} className="link-styles">
+            {" "}
+            <span>Log In</span>
+          </Link>
+        </h4>
+        <button type="submit">Sign Up</button>
+      </motion.form>
+    </Container>
+  );
 };
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  color: white;
-  .bgImg {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    filter: brightness(0.4);
-    z-index: -1;
-  }
+  margin: auto;
+  width: 70%;
+  height: auto;
+  background: linear-gradient(
+    306deg,
+    rgba(117, 70, 117, 1) 50%,
+    rgba(3, 95, 139, 1) 100%
+  );
+  box-shadow: 7px 7px 13px #8f8f8f, -7px -7px 13px #ffffff;
+  margin-top: 3%;
+  border-radius: 10px;
   form {
-    border-radius: 10px;
-    padding: 30px 10px;
+    background-color: #1f1e1e;
+    margin-top: 3em;
+    width: 500px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 8em;
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px 1px #c4c4c4b7;
-    width: 440px;
+    color: white;
+    text-align: center;
+    height: 520px;
+    .go-back {
+      align-self: flex-start;
+      text-align: left;
+      padding: 7px 10px;
+      color: gray;
+      cursor: pointer;
+      :hover {
+        color: white;
+      }
+    }
     h2 {
-      font-weight: 300;
+      font-size: 2em;
+      font-weight: 400;
+      margin-top: 10px;
     }
     div {
       display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      width: 100%;
+      align-items: center;
+      width: 60%;
+      position: relative;
       input {
+        margin-top: 12px;
+        border-radius: 20px;
+        border: 2px solid transparent;
+        background: linear-gradient(#1f1e1e, #1f1e1e) padding-box,
+          linear-gradient(to right, #00418b, darkorchid) border-box;
+        padding: 14px 20px;
         font-family: "Poppins", sans-serif;
-        background: none;
-        border: 1px solid white;
-        font-size: 17px;
-        padding: 7px 10px;
-        margin-top: 20px;
-        border-radius: 20px 0 0 20px;
         outline: none;
         color: white;
-        ::placeholder {
-          color: #bdbdbd;
-        }
-        :focus {
-          color: white;
-        }
-        :nth-child(2) {
-          border-radius: 0 20px 20px 0;
-          margin-top: 10px;
-        }
+        font-size: 16px;
+        width: 100%;
       }
       .icon {
-        color: var(--fontPrimaryColor);
-        background-color: white;
-        padding: 10px;
-        font-size: 2.6em;
-        border-radius: 50% 0 0 50%;
-        :nth-child(2) {
-          border-radius: 0 50% 50% 0;
-          cursor: pointer;
+        position: absolute;
+        right: 17px;
+        margin-top: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    }
+    h4 {
+      color: gray;
+      font-weight: 300;
+      padding: 10px;
+      span {
+        color: #cacaca;
+        cursor: pointer;
+        :hover {
+          text-decoration: underline;
         }
       }
     }
     button {
-      margin-top: 1.4em;
-      font-size: 17px;
-      font-family: "Poppins", sans-serif;
-      padding: 7px 14px;
-      border: none;
-      background-color: var(--primaryColor);
+      margin-top: 17px;
+      border-radius: 20px;
+      border: 2px solid transparent;
+      background: linear-gradient(#1f1e1e, #1f1e1e) padding-box,
+        linear-gradient(to right, #00418b, darkorchid) border-box;
+      padding: 10px 20px;
+      box-shadow: 1px 1px 4px #3a3838, -1px -1px 7px #757272;
       color: white;
-      border-radius: 10px;
-      :hover {
-        background: var(--primaryColorDark);
-        transition: 0.3s;
-        cursor: pointer;
-      }
-    }
-    p {
-      color: #d3d3d3;
-      margin-top: 20px;
-    }
-    .p2 {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
       cursor: pointer;
+      transition: 0.3s;
       :hover {
-        text-decoration: underline;
+        background: linear-gradient(#302f2f, #2c2b2b) padding-box,
+          linear-gradient(to right, #00418b, darkorchid) border-box;
       }
-    }
-    .link-styles {
-      text-decoration: underline;
     }
   }
-  @media (max-width: 470px) {
-    padding: 0 3%;
+  @media (max-width: 570px) {
+    width: 94%;
     form {
       width: 100%;
-      padding: 30px 8px;
+      div {
+        width: 80%;
+      }
     }
   }
 `;
