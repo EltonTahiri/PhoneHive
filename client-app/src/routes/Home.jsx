@@ -6,6 +6,7 @@ import NewestPhones from "../components/NewestPhones";
 import Guarantees from "../components/Guarantees";
 import Navbar from "../components/Navbar";
 import ProductCategories from "../components/ProductCategories";
+import LaptopsComp from "../components/LaptopsComp";
 
 const Home = ({ theme }) => {
   return (
@@ -15,7 +16,7 @@ const Home = ({ theme }) => {
       <ProductCategories />
       <Banner />
       <NewestPhones />
-      {/* guarantees compoment */}
+      <LaptopsComp />
       <Guarantees />
     </Container>
   );

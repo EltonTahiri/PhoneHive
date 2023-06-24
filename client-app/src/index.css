@@ -34,8 +34,13 @@ code {
   --navbarBg: white;
   --gradientBackground: -webkit-linear-gradient(
     109.6deg,
-    rgba(193, 82, 236, 0.753) 11.2%,
-    rgb(243, 111, 140) 100.2%
+    rgba(150, 50, 189, 0.753) 11.2%,
+    rgb(233, 135, 122) 100.2%
+  );
+  --gradientBackgroundDarker: -webkit-linear-gradient(
+    109.6deg,
+    rgba(106, 17, 141, 0.753) 11.2%,
+    rgb(189, 77, 63) 100.2%
   );
 }
 /* [data-theme="dark"] {

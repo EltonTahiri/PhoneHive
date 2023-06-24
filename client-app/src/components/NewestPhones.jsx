@@ -24,7 +24,7 @@ const NewestPhones = () => {
   return (
     <Container>
       <h3 className="title">
-        <span>Newest </span>Phones
+        <span>Newest </span>Products
       </h3>
       <Swiper
         speed={600}
@@ -40,8 +40,7 @@ const NewestPhones = () => {
           slot="container-start"
           className="parallax-bg"
           style={{
-            backgroundImage:
-              " linear-gradient(to right top, #161616, #131313, #181717, #141414, #3b4146)",
+            backgroundColor: "#111111",
             backgroundPosition: "cover",
             width: "170%",
           }}
@@ -166,11 +165,9 @@ const NewestPhones = () => {
   );
 };
 const Container = styled.div`
-  margin-bottom: 10em;
   .swiper {
     width: 100%;
     height: auto;
-    background-color: #36333321;
 
     .slide {
       width: 100%;
