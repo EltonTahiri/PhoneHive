@@ -107,7 +107,7 @@ const Container = styled.div`
           cursor: pointer;
           transition: 0.3s;
           :hover {
-            background: var(--gradientBackgroundDarker);
+            background: #a3a3a3;
           }
         }
       }

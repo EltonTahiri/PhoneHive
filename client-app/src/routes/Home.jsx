@@ -7,8 +7,9 @@ import Guarantees from "../components/Guarantees";
 import Navbar from "../components/Navbar";
 import ProductCategories from "../components/ProductCategories";
 import LaptopsComp from "../components/LaptopsComp";
+import TabletsComp from "../components/TabletsComp";
 
-const Home = ({ theme }) => {
+const Home = () => {
   return (
     <Container>
       <Navbar />
@@ -17,6 +18,7 @@ const Home = ({ theme }) => {
       <Banner />
       <NewestPhones />
       <LaptopsComp />
+      <TabletsComp />
       <Guarantees />
     </Container>
   );

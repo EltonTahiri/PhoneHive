@@ -93,7 +93,7 @@ const Container = styled.div`
   padding: 1% 4%;
   position: fixed;
   top: 0;
-  height: 80px;
+  height: 60px;
   width: 100%;
   z-index: 100;
   overflow-x: visible;

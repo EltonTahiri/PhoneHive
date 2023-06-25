@@ -37,6 +37,11 @@ code {
     rgba(150, 50, 189, 0.753) 11.2%,
     rgb(233, 135, 122) 100.2%
   );
+  --gradientBackground2: -webkit-linear-gradient(
+    109.6deg,
+    rgba(150, 50, 189, 0.753) 31.2%,
+    rgb(57, 135, 236) 100.2%
+  );
   --gradientBackgroundDarker: -webkit-linear-gradient(
     109.6deg,
     rgba(106, 17, 141, 0.753) 11.2%,
