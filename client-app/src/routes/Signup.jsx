@@ -23,6 +23,7 @@ const Signup = () => {
     try {
       const response = await axios.post("https://localhost:5001/api/Register", {
         name: name,
+        surname: surname,
         email: email,
         password: password,
         confirmPassword: confirmPassword,
@@ -56,7 +57,12 @@ const Signup = () => {
             type="name"
             placeholder="Enter Your Name"
           />
-          <input type="text" placeholder="Enter Your Surname" />
+          <input
+            onChange={(e) => setSurname(e.target.value)}
+            value={surname}
+            type="text"
+            placeholder="Enter Your Surname"
+          />
         </div>
         <div>
           <input

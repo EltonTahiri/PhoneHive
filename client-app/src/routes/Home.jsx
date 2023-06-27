@@ -8,18 +8,24 @@ import Navbar from "../components/Navbar";
 import ProductCategories from "../components/ProductCategories";
 import LaptopsComp from "../components/LaptopsComp";
 import TabletsComp from "../components/TabletsComp";
+import WatchesComp from "../components/WatchesComp";
+import Statistics from "../components/Statistics";
+import Testimonials from "../components/Testimonials";
 
 const Home = () => {
   return (
     <Container>
       <Navbar />
       <Hero />
+      <Statistics />
       <ProductCategories />
       <Banner />
       <NewestPhones />
       <LaptopsComp />
       <TabletsComp />
+      <WatchesComp />
       <Guarantees />
+      <Testimonials />
     </Container>
   );
 };

@@ -4,25 +4,31 @@ import galaxyPhones from "../assets/homePageImgs/galaxyS23SeriesImg.png";
 import macbook from "../assets/homePageImgs/macbook.png";
 import galaxyWatches from "../assets/homePageImgs/galaxyWatch.png";
 import iPad from "../assets/homePageImgs/ipad.png";
+import {
+  BsPhoneFill,
+  BsFillLaptopFill,
+  BsTabletFill,
+  BsSmartwatch,
+} from "react-icons/bs";
 
 const ProductCategories = () => {
   return (
     <Container>
       <div className="items">
         <div className="item">
-          <img src={galaxyPhones} alt="" />
+          <BsPhoneFill className="icon" />
           <h2>PHONES</h2>
         </div>
         <div className="item">
-          <img src={macbook} alt="" />
+          <BsFillLaptopFill className="icon" />
           <h2>LAPTOPS</h2>
         </div>
         <div className="item">
-          <img src={galaxyWatches} alt="" />
+          <BsSmartwatch className="icon" />
           <h2>SMARTWATCHES</h2>
         </div>
         <div className="item">
-          <img src={iPad} alt="" />
+          <BsTabletFill className="icon" />
           <h2>TABLETS</h2>
         </div>
       </div>
@@ -31,7 +37,6 @@ const ProductCategories = () => {
 };
 const Container = styled.div`
   padding: 0 7%;
-  margin-top: 10em;
   .items {
     display: flex;
     align-items: flex-end;
@@ -48,15 +53,24 @@ const Container = styled.div`
       gap: 10px;
       cursor: pointer;
       transition: 0.3s;
+      :nth-child(2) {
+        padding-bottom: 2em;
+      }
+      :nth-child(4) {
+        margin-bottom: 2em;
+      }
       :hover {
         transform: scale(1.04);
       }
-      img {
-        width: 100%;
+      .icon {
+        font-size: 4em;
       }
       h2 {
         color: var(--fontSecondaryColor);
-        font-weight: 400;
+        font-weight: 500;
+        background: var(--gradientBackground);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
     }
   }
