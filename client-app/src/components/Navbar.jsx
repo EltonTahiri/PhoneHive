@@ -27,7 +27,8 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     localStorage.removeItem("token");
-    navigate("/log-in");
+    navigate("/");
+    window.location.reload();
   };
   return (
     <Container>
@@ -49,6 +50,14 @@ const Navbar = () => {
             onClick={() => setActiveTab("home")}
           >
             Home
+          </li>
+        </Link>
+        <Link to={"/"} className="link-styles">
+          <li
+            className={activeTab === "products" ? "activeTab" : "nonActive"}
+            onClick={() => setActiveTab("products")}
+          >
+            Products
           </li>
         </Link>
         <Link to={"/brands"} className="link-styles">
