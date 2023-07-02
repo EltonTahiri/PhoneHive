@@ -13,10 +13,6 @@ const Statistics = () => {
           <h3>400+</h3>
           <p>PRODUCTS</p>
         </div>
-        <div className="item">
-          <h3>$200,000</h3>
-          <p>TRANSACTION</p>
-        </div>
       </div>
     </Container>
   );

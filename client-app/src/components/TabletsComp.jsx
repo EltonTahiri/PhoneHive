@@ -99,6 +99,15 @@ const Container = styled.div`
       }
     }
   }
+  @media (max-width: 706px) {
+    .items {
+      .item {
+        :nth-child(3) {
+          margin-top: 3em;
+        }
+      }
+    }
+  }
 `;
 
 export default TabletsComp;

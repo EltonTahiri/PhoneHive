@@ -20,9 +20,9 @@ const Testimonials = () => {
         <div className="item">
           <RiDoubleQuotesR className="icon" />
           <p>
-            I have been a loyal customer of [Your Company Name] for years
-            because they consistently provide top-quality products. Their
-            commitment to excellence is evident in every purchase I've made.
+            I have been a loyal customer of PhoneHIVE for years because they
+            consistently provide top-quality products. Their commitment to
+            excellence is evident in every purchase I've made.
           </p>
           <div>
             <img src={personPic1} alt="" />
@@ -75,9 +75,6 @@ const Container = styled.div`
     justify-content: center;
     gap: 1em;
     h1 {
-      background: var(--gradientBackground);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       font-size: 3em;
       font-weight: 600;
       max-width: 14em;
@@ -153,6 +150,33 @@ const Container = styled.div`
         width: 100%;
         text-align: center;
         align-items: center;
+      }
+    }
+    .topSection {
+      h1 {
+        font-size: 2.7em;
+      }
+    }
+  }
+  @media (max-width: 672px) {
+    .topSection {
+      flex-direction: column;
+      h1 {
+        width: 100%;
+      }
+      p {
+        width: 100%;
+      }
+    }
+  }
+  @media (max-width: 430px) {
+    .topSection {
+      flex-direction: column;
+      h1 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 14px;
       }
     }
   }

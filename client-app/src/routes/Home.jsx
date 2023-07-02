@@ -11,6 +11,8 @@ import TabletsComp from "../components/TabletsComp";
 import WatchesComp from "../components/WatchesComp";
 import Statistics from "../components/Statistics";
 import Testimonials from "../components/Testimonials";
+import ContactUsComp from "../components/ContactUsComp";
+import BestSellingProducts from "../components/BestSellingProducts";
 
 const Home = () => {
   return (
@@ -26,12 +28,15 @@ const Home = () => {
       <WatchesComp />
       <Guarantees />
       <Testimonials />
+      <BestSellingProducts />
+      <ContactUsComp />
     </Container>
   );
 };
 const Container = styled.div`
   background: var(--primaryBackgroundColor);
   color: var(--fontPrimaryColor);
+  overflow-x: hidden;
 `;
 
 export default Home;

@@ -1,9 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import galaxyPhones from "../assets/homePageImgs/galaxyS23SeriesImg.png";
-import macbook from "../assets/homePageImgs/macbook.png";
-import galaxyWatches from "../assets/homePageImgs/galaxyWatch.png";
-import iPad from "../assets/homePageImgs/ipad.png";
 import {
   BsPhoneFill,
   BsFillLaptopFill,
