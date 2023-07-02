@@ -13,7 +13,6 @@ function App() {
   };
   return (
     <div className="App" data-theme={theme}>
-      
       <Routes>
         <Route path="/" element={<Home />} theme={theme} />
         <Route path="/brands" element={<Brands />} />
