@@ -113,6 +113,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   margin: auto;
+  margin-top: 2em;
   width: 100%;
   height: 100vh;
   background: linear-gradient(
@@ -213,9 +214,7 @@ const Container = styled.div`
   }
   @media (max-width: 570px) {
     padding: 0 3%;
-    height: auto;
     form {
-      height: auto;
       width: 100%;
       margin-bottom: 2em;
       padding-bottom: 2em;

@@ -23,8 +23,8 @@ const BestSellingProducts = () => {
         </div>
         <div className="card">
           <div className="hiddenElement1">
-            <h2>Galaxy S22+</h2>
-            <p>780+ Sales</p>
+            <h2>Galaxy S23+</h2>
+            <p>730+ Sales</p>
           </div>
 
           <div className="hiddenElement2">
@@ -148,7 +148,7 @@ const Container = styled.div`
   @media (max-width: 1030px) {
     padding: 7em 2%;
     .cards {
-      margin-right: 27%;
+      margin-right: 30%;
       gap: 270px;
     }
   }

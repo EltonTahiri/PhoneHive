@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 import NewestPhones from "../components/NewestPhones";
 import Guarantees from "../components/Guarantees";
-import Navbar from "../components/Navbar";
 import ProductCategories from "../components/ProductCategories";
 import LaptopsComp from "../components/LaptopsComp";
 import TabletsComp from "../components/TabletsComp";
@@ -13,11 +11,11 @@ import Statistics from "../components/Statistics";
 import Testimonials from "../components/Testimonials";
 import ContactUsComp from "../components/ContactUsComp";
 import BestSellingProducts from "../components/BestSellingProducts";
+import Hero from "../components/Hero";
 
 const Home = () => {
   return (
     <Container>
-      <Navbar />
       <Hero />
       <Statistics />
       <ProductCategories />

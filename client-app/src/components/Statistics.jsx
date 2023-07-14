@@ -10,15 +10,19 @@ const Statistics = () => {
           <p>LOYAL CUSTOMERS</p>
         </div>
         <div className="item">
-          <h3>400+</h3>
+          <h3>930+</h3>
           <p>PRODUCTS</p>
+        </div>
+        <div className="item">
+          <h3>800+</h3>
+          <p>DONE DEALS</p>
         </div>
       </div>
     </Container>
   );
 };
 const Container = styled.div`
-  padding: 8em 2% 3em 2%;
+  padding: 4em 2% 3em 2%;
   .items {
     display: flex;
     justify-content: center;

@@ -1,114 +1,131 @@
 import React from "react";
 import styled from "styled-components";
-import bannerImg from "../assets/homePageImgs/heroImg.png";
-import { motion } from "framer-motion";
+import bannerImg from "../assets/homePageImgs/bannerImg2.png";
 
 const Hero = () => {
   return (
     <Container>
-      <img src={bannerImg} className="heroBg" alt="" />
-      <div className="text">
-        <motion.h1
-          animate={{ y: 0, opacity: 1 }}
-          initial={{ y: 300, opacity: 0 }}
-          transition={{
-            duration: 1,
-            bounce: 0.3,
-            delay: 0.8,
-            type: "spring",
-          }}
-        >
-          Stay connected. Stay ahead.
-        </motion.h1>
-        <motion.p
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ x: -400, opacity: 0 }}
-          transition={{ duration: 1, bounce: 0.3, delay: 0.4, type: "spring" }}
-        >
+      <div className="leftSide">
+        <h1>
+          Stay Connected. <br />
+          Stay Ahead!
+        </h1>
+        <p>
           Unlock endless possibilities and embark on a journey of technological
           marvels with our extraordinary phones.
-        </motion.p>
-        <button>EXPLORE MORE</button>
+        </p>
+        <button>Explore More</button>
       </div>
+      <img src={bannerImg} alt="" />
     </Container>
   );
 };
 const Container = styled.div`
-  .heroBg {
-    position: relative;
-    width: 100%;
-    height: 90vh;
-    filter: brightness(0.3);
-    object-fit: cover;
-    border-radius: 0 0 20px 20px;
-  }
-  .text {
-    width: 100%;
-    padding: 0 3%;
-    top: 10%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    position: absolute;
-    background: none;
-    margin-top: 10%;
-    text-align: center;
-    color: white;
+  padding: 0 4%;
+  margin-top: 5.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2em;
+  .leftSide {
+    width: 44%;
     h1 {
-      font-weight: 500;
       font-size: 3.4em;
+      background: var(--gradientBackground2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     p {
-      font-weight: 300;
+      color: gray;
+      margin-top: 10px;
     }
     button {
-      margin-top: 1em;
-      padding: 7px 10px;
-      font-family: "Poppins", sans-serif;
-      font-size: 20px;
-      border: none;
-      backdrop-filter: blur(20px);
-      background: none;
-      color: white;
-      box-shadow: 0 0 7px 2px #ffffff47;
+      background: linear-gradient(145deg, #dddddd, #ffffff);
+      box-shadow: 12px 12px 42px #acacac, -12px -12px 42px #ffffff;
+      border: 1px solid #cecece;
+      color: var(--primaryColor);
+      padding: 14px;
       border-radius: 10px;
+      margin-top: 1em;
+      font-size: 20px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: 0.3s;
       :hover {
-        background: var(--primaryColorDark);
-        transition: 0.3s;
-        cursor: pointer;
+        background-color: #5597eeca;
+        color: white;
       }
     }
   }
-  @media (max-width: 855px) {
-    .text {
-      h1 {
-        padding: 0 17%;
-      }
+  img {
+    width: 40%;
+  }
+  @media (min-width: 1440px) {
+    margin-top: 10em;
+  }
+  @media (max-width: 1048px) {
+    margin-top: 7em;
+    gap: 1em;
+    .leftSide {
+      width: 60%;
     }
   }
-  @media (max-width: 735px) {
-    .text {
+  @media (max-width: 880px) {
+    .leftSide {
+      width: 60%;
       h1 {
-        padding: 0 10%;
-      }
-    }
-  }
-  @media (max-width: 615px) {
-    .text {
-      margin-top: 8em;
-      h1 {
-        padding: 0 7%;
-        font-size: 2.8em;
-      }
-    }
-  }
-  @media (max-width: 471px) {
-    .text {
-      h1 {
-        padding: 0 4%;
         font-size: 2.4em;
+      }
+    }
+  }
+  @media (max-width: 788px) {
+    .rightSide {
+      img {
+        width: 20em;
+      }
+    }
+    .leftSide {
+      width: 60%;
+      h1 {
+        font-size: 2.4em;
+      }
+    }
+  }
+  @media (max-width: 740px) {
+    .leftSide {
+      width: 60%;
+      h1 {
+        font-size: 2.2em;
+      }
+    }
+  }
+  @media (max-width: 710px) {
+    flex-direction: column;
+    padding: 4em 2%;
+    margin-top: 3em;
+    .leftSide {
+      width: 100%;
+      text-align: center;
+      h1 {
+        font-size: 2.7em;
+      }
+    }
+    img {
+      width: 70%;
+    }
+  }
+  @media (max-width: 655px) {
+    .leftSide {
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+  }
+  @media (max-width: 655px) {
+    .rightSide {
+      img {
+        width: 100%;
       }
     }
   }

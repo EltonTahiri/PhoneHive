@@ -19,7 +19,7 @@ code {
 }
 .link-styles {
   text-decoration: none;
-  color: white;
+  color: rgb(31, 31, 31);
 }
 
 :root {

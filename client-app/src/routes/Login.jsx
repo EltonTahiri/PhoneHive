@@ -89,15 +89,15 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   margin: auto;
-  width: 70%;
-  height: auto;
+  margin-top: 2em;
+  width: 100%;
+  height: 100vh;
   background: linear-gradient(
     306deg,
     rgba(117, 70, 117, 1) 50%,
     rgba(3, 95, 139, 1) 100%
   );
   box-shadow: 7px 7px 13px #8f8f8f, -7px -7px 13px #ffffff;
-  margin-top: 4%;
   border-radius: 10px;
   form {
     background-color: #1f1e1e;
@@ -182,9 +182,12 @@ const Container = styled.div`
     }
   }
   @media (max-width: 570px) {
-    width: 94%;
+    padding: 0 3%;
+    padding-top: 3em;
     form {
       width: 100%;
+      margin-bottom: 2em;
+      padding-bottom: 2em;
       div {
         width: 80%;
       }

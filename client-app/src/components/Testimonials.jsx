@@ -78,6 +78,9 @@ const Container = styled.div`
       font-size: 3em;
       font-weight: 600;
       max-width: 14em;
+      background: var(--gradientBackground);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     p {
       margin-top: 20px;

@@ -10,9 +10,12 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => setToggle(!toggle);
+
   const [activeTab, setActiveTab] = useState("home");
   const [name, setName] = useState("");
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -27,7 +30,8 @@ const Navbar = () => {
 
   const handleLogOut = () => {
     localStorage.removeItem("token");
-    navigate("/log-in");
+    window.location.reload();
+    navigate("/");
   };
   return (
     <Container>
@@ -41,8 +45,6 @@ const Navbar = () => {
         onClick={handleToggle}
         className={toggle ? "nav-menu active" : "nav-menu"}
       >
-        {/* <div className="blur"></div>
-        <div className="content"> */}
         <Link to={"/"} className="link-styles">
           <li
             className={activeTab === "home" ? "activeTab" : "nonActive"}
@@ -50,6 +52,43 @@ const Navbar = () => {
           >
             Home
           </li>
+        </Link>
+        <Link to={"/"} className="link-styles">
+          <div
+            className="submenu"
+            onMouseLeave={() => setSubmenuOpen(false)}
+            onMouseOver={() => setSubmenuOpen(true)}
+          >
+            <li
+              className={activeTab === "products" ? "activeTab" : "nonActive"}
+              onClick={() => setActiveTab("products")}
+            >
+              Products ▼
+            </li>
+            {submenuOpen === true ? (
+              <div
+                className="menu"
+                onMouseOver={() => setSubmenuOpen(true)}
+                onClick={() => setSubmenuOpen(true)}
+              >
+                <Link to={"/products/phones"} className="link-styles">
+                  <p
+                    className={
+                      activeTab === "phones" ? "activeTab" : "nonActive"
+                    }
+                    onClick={() => setActiveTab("phones")}
+                  >
+                    Phones
+                  </p>
+                </Link>
+                <p>Laptops</p>
+                <p>Tablets</p>
+                <p>Smartwatches</p>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
         </Link>
         <Link to={"/brands"} className="link-styles">
           <li
@@ -59,7 +98,6 @@ const Navbar = () => {
             Brands
           </li>
         </Link>
-        {/* <li>Latest Phones</li> */}
         <li>About Us</li>
         <li>Contact Us</li>
         {!isLoggedIn ? (
@@ -85,8 +123,8 @@ const Navbar = () => {
   );
 };
 const Container = styled.div`
-  color: white;
-  background: #000000dd;
+  color: #1a1a1a;
+  background: #ececec;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -114,6 +152,30 @@ const Container = styled.div`
     li {
       transition: 0.3s;
       cursor: pointer;
+    }
+    .submenu {
+      position: relative;
+      .menu {
+        transition: 0.3s;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        position: absolute;
+        background: #ececec;
+        border-radius: 0 0 10px 10px;
+        top: 23px;
+        border-top: none;
+        text-align: center;
+        padding: 7px;
+        left: -2.6em;
+        p {
+          border-radius: 10px;
+          padding: 10px;
+          :hover {
+            background-color: #cecece;
+          }
+        }
+      }
     }
     .themeIcon {
       font-size: 24px;
@@ -191,7 +253,7 @@ const Container = styled.div`
     transition: 0.3s;
     display: none;
     .icon {
-      color: white;
+      color: #292929;
     }
     :hover {
       transform: scale(1.1);
@@ -210,6 +272,7 @@ const Container = styled.div`
     .blur.active {
       left: -1em;
       width: 70%;
+      overflow: visible;
     }
     .nav-menu {
       background-color: #2c2c2c;
@@ -243,6 +306,9 @@ const Container = styled.div`
     .mobile-menu {
       display: block;
       z-index: 99;
+      .icon {
+        color: #6cb1eb;
+      }
     }
     .nav-menu.active {
       right: 1%;

@@ -6,15 +6,18 @@ import {
   BsTabletFill,
   BsSmartwatch,
 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const ProductCategories = () => {
   return (
     <Container>
       <div className="items">
-        <div className="item">
-          <BsPhoneFill className="icon" />
-          <h2>PHONES</h2>
-        </div>
+        <Link to={"/products/phones"} className="link-styles">
+          <div className="item">
+            <BsPhoneFill className="icon" />
+            <h2>PHONES</h2>
+          </div>
+        </Link>
         <div className="item">
           <BsFillLaptopFill className="icon" />
           <h2>LAPTOPS</h2>
